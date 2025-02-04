@@ -1,0 +1,110 @@
+@use "../../assets/style/mixins" as mixins;
+
+.room__list {
+  position: relative;
+  margin-top: 70px;
+}
+
+.room__list::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 45%;
+  /* Картинка занимает 60%, остальное пространство заполняется */
+  opacity: 0;
+  z-index: 0;
+  /* Псевдоэлемент находится под картинкой */
+}
+
+.room__img {
+  z-index: 1;
+  /* Картинка сверху */
+  max-width: 60%;
+  /* Ширина картинки */
+  height: auto;
+  /* Сохраняет пропорции */
+  margin-left: 70px;
+}
+
+.room_card-description {
+  position: absolute;
+  top: 13%;
+  right: 7%;
+  z-index: 9999;
+  display: inline-block;
+  background-color: var(--white-text-color);
+  border-radius: 8px;
+  box-shadow: 0 0 25px 0 rgba(208, 208, 208, 0.25);
+}
+
+.room-description {
+  display: inline-block;
+  padding: 40px 100px
+}
+
+.room__btn {
+  @include mixins.bron-btn;
+  background-color: var(--secondary-accent-color);
+  color: var(--white-text-color)
+}
+
+.room__btn-container {
+  @include mixins.bron-btn__contain;
+  background-color: var(--white-text-color)
+}
+
+.room__btn-icon {
+  @include mixins.bron-room__btn_icon;
+  fill: var(--secondary-accent-color)
+}
+
+.room_card-list {
+  margin-top: 30px;
+}
+
+.room_card-el::marker {
+  content: '●';
+  color: var(--primary-accent-color);
+  font-size: 22px;
+}
+
+.room__slide {
+ @include mixins.slide;
+}
+
+.room__circ {
+  @include mixins.circ
+}
+
+.room__circ-icon {
+  @include mixins.circ-icon
+}
+
+.room__circ-el {
+  @include mixins.circ-el
+}
+
+.room__circ-el:last-child {
+  @include mixins.circ-last-child
+}
+
+.room__arrow-contain {
+  @include mixins.arrow-contain
+}
+
+.room__arrow {
+  @include mixins.arrow
+}
+
+.room__arrow {
+  button {
+    @include mixins.arrow-btn
+  }
+}
+
+.room__arrow-icon {
+  @include mixins.arrow-icon
+}
