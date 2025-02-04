@@ -1,0 +1,11 @@
+@use "./assets/style/normalize.css";
+@use "./assets/style/font";
+@use "./assets/style/bundle";
+@use "./assets/style/common";
+
+@use "./component/header/header.scss";
+@use "./component/hero/hero.scss";
+@use "./component/advantages/advantages.scss";
+@use "./component/rooms/rooms.scss";
+@use "./component/reviews/reviews.scss";
+@use "./component/footer/footer.scss";
