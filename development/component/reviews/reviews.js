@@ -1,2 +1,7 @@
 import reviewsHTML from "../reviews/reviews.html";
-document.getElementById("reviews").innerHTML = reviewsHTML;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const reviewsElement = document.getElementById("reviews");
+    if (!reviewsElement) return;
+    reviewsElement.innerHTML = reviewsHTML;
+});

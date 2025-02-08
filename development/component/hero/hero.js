@@ -1,2 +1,7 @@
 import heroHTML from "../hero/hero.html";
-document.getElementById("hero").innerHTML = heroHTML;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const heroElement = document.getElementById("hero");
+    if (!heroElement) return;
+    heroElement.innerHTML = heroHTML;
+});

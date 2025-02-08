@@ -1,4 +1,4 @@
-.header {
+.header__desk {
   display: flex;
   align-items: center;
 }
@@ -22,4 +22,8 @@ nav {
 
 .header__nav-el:last-child {
   margin-right: 0px;
+}
+
+.header__mob{
+  display: none;
 }

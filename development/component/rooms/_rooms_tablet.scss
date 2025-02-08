@@ -1,0 +1,36 @@
+@media screen and (max-width: 1024px){
+  .room__img{
+    max-width: 440px;
+    margin: 0;
+  }
+
+  .room_card-description{
+    top: 2%;
+    right: 0%;
+  }
+
+  .room-description{
+    padding: 40px;
+  }
+
+  .room_card-el{
+    font-size: 15px;
+  }
+
+  .room_card-el::marker {
+    font-size: 18px;
+  }
+
+  .room__slide{
+    justify-content: center;
+  }
+
+  .room__circ{
+    margin: 0;
+  }
+
+  .room__arrow-contain,
+  .el{
+    display: none;
+  }
+}

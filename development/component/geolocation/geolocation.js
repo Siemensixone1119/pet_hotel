@@ -1,3 +1,7 @@
-import "../geolocation/geolocation.scss"
 import geolocationHTML from "../geolocation/geolocation.html";
-document.getElementById("geolocation").innerHTML = geolocationHTML;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const geolocationElement = document.getElementById("geolocation");
+    if (!geolocationElement) return;
+    geolocationElement.innerHTML = geolocationHTML;
+});

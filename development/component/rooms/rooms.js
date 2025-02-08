@@ -1,2 +1,7 @@
 import roomsHTML from "../rooms/rooms.html";
-document.getElementById("rooms").innerHTML = roomsHTML;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const roomsElement = document.getElementById("rooms");
+    if (!roomsElement) return;
+    roomsElement.innerHTML = roomsHTML;
+});
