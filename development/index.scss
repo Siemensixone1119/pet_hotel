@@ -14,14 +14,19 @@
 
 @use "./component/advantages/advantages.scss";
 @use "./component/advantages/advantages_tablet.scss";
+@use "./component/advantages/advantages_mobile.scss";
 
 @use "./component/rooms/rooms.scss";
 @use "./component/rooms/rooms_tablet.scss";
+@use "./component/rooms/rooms_mobile.scss";
 
 @use "./component/reviews/reviews.scss";
 @use "./component/reviews/reviews_tablet.scss";
+@use "./component/reviews/reviews_mobile.scss";
 
 @use "./component/geolocation/geolocation.scss";
 @use "./component/geolocation/geolocation_tablet.scss";
+@use "./component/geolocation/geolocation_mobile.scss";
 
 @use "./component/footer/footer.scss";
+@use "./component/footer/footer_mobile.scss";

@@ -17,8 +17,7 @@ body {
   padding: 0px 15px;
 }
 
-.contain:first-child,
-.contain:last-child {
+.contain:first-child{
   margin-top: 0px;
   padding: 12px 15px;
 }
@@ -76,8 +75,11 @@ h3 {
 
 @media screen and (max-width: 768px){
   .contain {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    width: auto;
+    margin-top: 70px;
+  }
+
+  h2{
+    font-size: 28px;
   }
 }

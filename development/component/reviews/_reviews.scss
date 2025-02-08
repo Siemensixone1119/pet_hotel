@@ -1,17 +1,18 @@
 @use "../../assets/style/mixins" as mixins;
 
-.contain-rev{
+.contain-rev {
   width: 100%;
   overflow: hidden;
   margin-top: 140px;
 }
-.reviews__contain{
+
+.reviews__contain {
   display: flex;
   position: relative;
   margin-top: 70px;
 }
 
-.reviews__el{
+.reviews__el {
   box-sizing: border-box;
   max-width: 470px;
   box-shadow: 0 0 25px 0 rgba(208, 208, 208, 0.25);
@@ -24,11 +25,11 @@
   margin-right: 30px;
 }
 
-.reviews__contain1{
+.reviews__contain1 {
   display: flex;
 }
 
-.reviews__contain2{
+.reviews__contain2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,7 +54,7 @@
   color: var(--secondary-text-color);
 }
 
-.reviews__slide{
+.reviews__slide {
   @include mixins.slide;
 }
 
@@ -69,11 +70,11 @@
   @include mixins.circ-el
 }
 
-.reviews__arrow-contain{
+.reviews__arrow-contain {
   @include mixins.arrow-contain
 }
 
-.reviews__arrow{
+.reviews__arrow {
   @include mixins.arrow
 }
 
@@ -83,6 +84,6 @@
   }
 }
 
-.reviews__arrow-icon{
+.reviews__arrow-icon {
   @include mixins.arrow-icon
 }
