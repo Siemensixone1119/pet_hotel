@@ -1,0 +1,29 @@
+.header__desk {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 63px;
+  height: 52px;
+}
+
+.header__nav {
+  display: flex;
+}
+
+nav {
+  margin-left: auto;
+}
+
+.header__nav-el {
+  margin-right: 30px;
+}
+
+.header__nav-el:last-child {
+  margin-right: 0px;
+}
+
+.header__mob{
+  display: none;
+}
