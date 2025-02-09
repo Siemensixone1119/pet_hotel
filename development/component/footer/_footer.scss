@@ -1,0 +1,42 @@
+.footer {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.logo {
+  width: 63px;
+  height: 52px;
+}
+
+.footer__nav {
+  display: flex;
+}
+
+nav {
+  margin-left: auto;
+}
+
+.footer__nav-el {
+  margin-right: 30px;
+}
+
+.footer__nav-el:last-child {
+  margin-right: 0px;
+}
+
+.line{
+  width: 100%;
+  border: 1px solid #efefef;
+}
+
+.footer_policy-contain{
+  display: flex;
+  color: var(--thirdth-text-color);
+}
+
+.footer_policy{
+  margin-left: auto;
+  color: var(--thirdth-text-color);
+}
