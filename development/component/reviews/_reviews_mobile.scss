@@ -1,26 +1,29 @@
 @media screen and (max-width: 768px){
+
   .contain-rev{
     margin-top: 70px;
   }
 
-  .reviews_icon{
-    height: 20px;
-  }
-
-  .reviews__contain2{
-    display: none;
-  }
-
-  .reviews__contain {
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 0px 15px;
-    gap: 15px;  // Добавляет отступы между элементами
-  }
-
-  .reviews__el {
-    min-width: calc(100vw - 30px); // 100vw минус padding
-    width: calc(100vw - 30px);
-    height: auto;
+  .reviews{
+    &_icon{
+      height: 20px;
+    }
+  
+    &__contain2{
+      display: none;
+    }
+  
+    &__contain {
+      display: flex;
+      flex-wrap: nowrap;
+      padding: 0px 15px;
+      gap: 15px;  // Добавляет отступы между элементами
+    }
+  
+    &__el {
+      min-width: calc(100vw - 30px); // 100vw минус padding
+      width: calc(100vw - 30px);
+      height: auto;
+    }
   }
 }

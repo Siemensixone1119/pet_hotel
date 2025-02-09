@@ -1,22 +1,31 @@
-@media screen and (max-width: 768px){
-  .hero__str1{
-    font-size: 12px;
-  }
+@media screen and (max-width: 768px) {
 
-  .hero__str2{
-    font-size: 44px;
-  }
-
-  .hero__str3{
-    font-size: 16px;
-  }
-
-  .hero__contain{
-    width: 100vw;
-  }
-
-  .hero-bcg{
+  .hero__bcg {
     height: 320px;
-    background-position: left;
+    .hero {
+      padding: 50px 0;
+
+      &__str1 {
+
+        font-size: 12px;
+      }
+
+      &__str2 {
+        font-size: 44px;
+      }
+
+      &__str3 {
+        font-size: 16px;
+      }
+
+      &__contain {
+        width: 100vw;
+      }
+
+      &__bcg {
+        height: 320px;
+        background-position: left;
+      }
+    }
   }
 }

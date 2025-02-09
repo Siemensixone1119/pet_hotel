@@ -4,20 +4,20 @@
     margin: 0;
   }
 
-  .room_card-description{
+  .room__card-description{
     top: 2%;
     right: 0%;
   }
 
-  .room-description{
+  .room__description{
     padding: 40px;
   }
 
-  .room_card-el{
+  .room__card-el{
     font-size: 15px;
   }
 
-  .room_card-el::marker {
+  .room__card-el::marker {
     font-size: 18px;
   }
 

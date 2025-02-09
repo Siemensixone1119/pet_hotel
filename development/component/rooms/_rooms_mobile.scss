@@ -7,7 +7,7 @@
     border-radius: 8px 8px 0 0;
   }
 
-  .room_card-description {
+  .room__card-description {
     position: relative;
     min-width: 290px;
     width: 100%;
@@ -16,15 +16,15 @@
     border-radius: 0 0 8px 8px;
   }
 
-.room-description{
-  width: 75%;
-}
+  .room__description {
+    width: 75%;
+  }
 
-  .rooms_space{
+  .rooms__space {
     display: inline;
   }
 
-  .room__btn{
+  .room__btn {
     margin-left: auto;
     margin-right: auto;
   }

@@ -3,27 +3,29 @@
   align-items: center;
 }
 
+.header__mob{
+  display: none;
+}
+
 .logo {
   width: 63px;
   height: 52px;
-}
-
-.header__nav {
-  display: flex;
 }
 
 nav {
   margin-left: auto;
 }
 
-.header__nav-el {
-  margin-right: 30px;
-}
+.header {
+  &__nav {
+    display: flex;
+  }
 
-.header__nav-el:last-child {
-  margin-right: 0px;
-}
-
-.header__mob{
-  display: none;
+  &__nav-el {
+    margin-right: 30px;
+  }
+  
+  &__nav-el:last-child {
+    margin-right: 0px;
+  }
 }

@@ -4,14 +4,16 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .advantages__icon-contain {
-    width: 60px;
-    height: 60px;
-  }
+  .advantages {
+    &__icon-contain {
+      width: 60px;
+      height: 60px;
+    }
 
-  .advantages__icon {
-    width: 40px;
-    height: 40px;
-  }
+    &__icon {
+      width: 40px;
+      height: 40px;
+    }
 
+  }
 }

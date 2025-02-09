@@ -1,6 +1,6 @@
 @use "../../assets/style/mixins" as mixins;
 
-.hero-bcg {
+.hero__bcg {
   background-image: url(./assets/image/hero_bcg.jpg);
   max-width: 100vw;
   min-height: 500px;
@@ -8,42 +8,40 @@
   background-size: cover;
   background-position: center;
   margin: 0 auto;
-}
-
-.hero-bcg {
   .hero {
     padding: 13vh 0px;
+
+    
+    &__str1 {
+      font-size: 15px;
+    }
+    
+    &__str2 {
+      font-family: var(--Rubik);
+      font-weight: 800;
+      font-size: 62px;
+      margin-bottom: 5px;
+    }
+    
+    &__str3 {
+      font-family: var(--Lato-500);
+      font-size: 21px;
+    }
+    
+    &__btn {
+      @include mixins.bron-btn;
+    }
+    
+    &__btn-icon-contain {
+      @include  mixins.bron-btn__contain
+    }
+    
+    &__btn-icon {
+      @include  mixins.bron-room__btn-icon
+    }
   }
 }
 
 .hero__contain {
   margin-left: 10%;
-}
-
-.hero__str1 {
-  font-size: 15px;
-}
-
-.hero__str2 {
-  font-family: var(--Rubik);
-  font-weight: 800;
-  font-size: 62px;
-  margin-bottom: 5px;
-}
-
-.hero__str3 {
-  font-family: var(--Lato-500);
-  font-size: 21px;
-}
-
-.hero__btn {
-  @include mixins.bron-btn;
-}
-
-.hero__btn-icon-contain {
-  @include  mixins.bron-btn__contain
-}
-
-.hero__btn-icon {
-  @include  mixins.bron-room__btn-icon
 }
