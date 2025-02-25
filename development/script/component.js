@@ -5,3 +5,7 @@ import "../component/header/header.js";
 import "../component/hero/hero.js";
 import "../component/reviews/reviews.js";
 import "../component/rooms/rooms.js";
+
+import "../component/filters/filters.js";
+import "../component/products/products.js";
+import "../component/advertising/advertising.js";

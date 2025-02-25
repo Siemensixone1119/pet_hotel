@@ -33,11 +33,11 @@
     }
     
     &__btn-icon-contain {
-      @include  mixins.bron-btn__contain
+      @include mixins.bron-btn__contain
     }
     
     &__btn-icon {
-      @include  mixins.bron-room__btn-icon
+      @include mixins.bron-room__btn-icon
     }
   }
 }

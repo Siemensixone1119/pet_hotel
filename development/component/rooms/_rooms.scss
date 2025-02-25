@@ -20,8 +20,9 @@
 .room__img {
   z-index: 1;
   max-width: 60%;
-  height: auto;
+  height: 100%;
   margin-left: 70px;
+  border-radius: 10px;
 }
 
 .room__card-description {

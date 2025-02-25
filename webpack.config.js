@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 const fs = require("fs");
 
 // Функция для получения всех HTML-файлов из указанной директории
@@ -112,6 +113,10 @@ module.exports = {
         },
       ],
     }),
+  //  new ESLintPlugin({ extensions: ["js"], // Укажите расширения файлов для проверки
+  //   exclude: ["node_modules"], // Исключение папок
+  //   fix: true,
+  //   overrideConfigFile: path.resolve(__dirname, "eslint.config.mjs")}) // Автоматическое исправление ошибок)
   ],
   devServer: {
     port: 8080, // Порт для локального сервера
