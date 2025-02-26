@@ -1,44 +1,55 @@
-<ul class="filter__list">
-  <li class="filter__item" data-open-filter>
-    <button class="filter__btn">
-      <svg class="filter__icon">
-        <use href="../../assets/image/symbol-defs.svg#icon-filter_up_arrow"></use>
+<div class="filters__backdrop hidden" data-backdrop></div>
+<div class="filters__cont">
+
+
+  <ul class="filter__list">
+    <li class="filter__item">
+      <button class="filter__btn">
+        <svg class="filter__icon">
+          <use href="../../assets/image/symbol-defs.svg#icon-filter_up_arrow"></use>
+        </svg>
+        <input type="radio" id="squareUp" name="filter" value="squareUp">
+        <label for="squareUp">По площади</label>
+        <svg class="filter__open-btn">
+          <use href="../../assets/image/symbol-defs.svg#icon-down_arrow"></use>
+        </svg>
+      </button>
+    </li>
+    <li class="filter__item">
+      <button class="filter__btn">
+        <svg class="filter__icon">
+          <use href="../../assets/image/symbol-defs.svg#icon-filter_down_arrow"></use>
+        </svg>
+        <input type="radio" id="squareDown" name="filter" value="squareDown">
+        <label for="squareDown">По площади</label>
+      </button>
+    </li>
+    <li class="filter__item">
+      <button class="filter__btn">
+        <svg class="filter__icon">
+          <use href="../../assets/image/symbol-defs.svg#icon-filter_up_arrow"></use>
+        </svg>
+        <input type="radio" id="priceUp" name="filter" value="priceUp">
+        <label for="priceUp">По цене</label>
+      </button>
+    </li>
+    <li class="filter__item">
+      <button class="filter__btn">
+        <svg class="filter__icon">
+          <use href="../../assets/image/symbol-defs.svg#icon-filter_down_arrow"></use>
+        </svg>
+        <input type="radio" id="priceDown" name="filter" value="priceDown">
+        <label for="priceDown">По цене</label>
+      </button>
+    </li>
+    <button class="filter__btn-open" type="button" data-open-filter>
+      <svg class="filter__btn-open-icon">
+        <use href="../../assets/image/symbol-defs.svg#icon-filter"></use>
       </svg>
-      <input type="radio" id="squareUp" name="filter" value="squareUp">
-      <label for="squareUp">По площади</label>
-      <svg class="filter__open-btn">
-        <use href="../../assets/image/symbol-defs.svg#icon-down_arrow"></use>
-      </svg>
+      <p>Фильтры</p>
     </button>
-  </li>
-  <li class="filter__item">
-    <button class="filter__btn">
-      <svg class="filter__icon">
-        <use href="../../assets/image/symbol-defs.svg#icon-filter_down_arrow"></use>
-      </svg>
-      <input type="radio" id="squareDown" name="filter" value="squareDown">
-      <label for="squareDown">По площади</label>
-    </button>
-  </li>
-  <li class="filter__item">
-    <button class="filter__btn">
-      <svg class="filter__icon">
-        <use href="../../assets/image/symbol-defs.svg#icon-filter_up_arrow"></use>
-      </svg>
-      <input type="radio" id="priceUp" name="filter" value="priceUp">
-      <label for="priceUp">По цене</label>
-    </button>
-  </li>
-  <li class="filter__item">
-    <button class="filter__btn">
-      <svg class="filter__icon">
-        <use href="../../assets/image/symbol-defs.svg#icon-filter_down_arrow"></use>
-      </svg>
-      <input type="radio" id="priceDown" name="filter" value="priceDown">
-      <label for="priceDown">По цене</label>
-    </button>
-  </li>
-</ul>
+  </ul>
+</div>
 
 <ul class="products">
   <li class="products__card">
@@ -60,7 +71,8 @@
           <span class="products__price">200&#8381;</span>
         </p>
       </div>
-      <a href="" class="products__btn">Забронировать
+      <a href="" class="products__btn">
+        <span class="products__btn-text">Забронировать</span>
         <div class="products__btn-cont">
           <svg class="products__btn-icon">
             <use href="../../assets/image/symbol-defs.svg#icon-paw"></use>
@@ -95,7 +107,7 @@
           <span class="products__price">200&#8381;</span>
         </p>
       </div>
-      <a href="" class="products__btn">Забронировать
+      <a href="" class="products__btn"><span class="products__btn-text">Забронировать</span>
         <div class="products__btn-cont">
           <svg class="products__btn-icon">
             <use href="../../assets/image/symbol-defs.svg#icon-paw"></use>
@@ -137,7 +149,7 @@
           <span class="products__price">250&#8381;</span>
         </p>
       </div>
-      <a href="" class="products__btn">Забронировать
+      <a href="" class="products__btn"><span class="products__btn-text">Забронировать</span>
         <div class="products__btn-cont">
           <svg class="products__btn-icon">
             <use href="../../assets/image/symbol-defs.svg#icon-paw"></use>
@@ -179,7 +191,7 @@
           <span class="products__price">350&#8381;</span>
         </p>
       </div>
-      <a href="" class="products__btn">Забронировать
+      <a href="" class="products__btn"><span class="products__btn-text">Забронировать</span>
         <div class="products__btn-cont">
           <svg class="products__btn-icon">
             <use href="../../assets/image/symbol-defs.svg#icon-paw"></use>
@@ -227,7 +239,7 @@
           <span class="products__price">500&#8381;</span>
         </p>
       </div>
-      <a href="" class="products__btn">Забронировать
+      <a href="" class="products__btn"><span class="products__btn-text">Забронировать</span>
         <div class="products__btn-cont">
           <svg class="products__btn-icon">
             <use href="../../assets/image/symbol-defs.svg#icon-paw"></use>
@@ -275,7 +287,7 @@
           <span class="products__price">600&#8381;</span>
         </p>
       </div>
-      <a href="" class="products__btn">Забронировать
+      <a href="" class="products__btn"><span class="products__btn-text">Забронировать</span>
         <div class="products__btn-cont">
           <svg class="products__btn-icon">
             <use href="../../assets/image/symbol-defs.svg#icon-paw"></use>

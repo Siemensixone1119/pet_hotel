@@ -34,7 +34,12 @@
 
 //
 @use "./component/filters/filters.scss";
+@use "./component/filters/filter_tablet";
+@use "./component/filters/filters_mobile";
 // 
 @use "./component/products/products.scss";
+@use "./component/products/products_tablet";
+@use "./component/products/products_mobile";
 // 
 @use "./component/advertising/advertising.scss";
+@use "./component/advertising/advartising_tablet"

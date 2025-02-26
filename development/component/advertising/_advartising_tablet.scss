@@ -1,0 +1,11 @@
+@media screen and (max-width: 1024px) {
+  .ad {
+    background-image: url(./assets/image/ad_tablet.jpg);
+    background-size: cover;
+
+    &-cont{
+      margin-left: 4vw;
+      margin-top: 45px;
+    }
+  }
+}

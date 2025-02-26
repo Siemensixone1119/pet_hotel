@@ -30,6 +30,10 @@ h3 {
     margin-top: 25px;
   }
 
+  &__btn-cont {
+    display: none;
+  }
+
   &__subtitle {
     display: inline-block;
     font-family: var(--Lato-500);
@@ -51,7 +55,7 @@ h3 {
 
   &__input {
     border: 1px solid #e1e1e1;
-    width: 100px;
+    width: 90px;
     height: 24px;
     padding: 0 5px;
   }
@@ -112,7 +116,7 @@ h3 {
     font-family: var(--Lato-600);
   }
 
-  &__reset-btn1{
+  &__reset-btn1 {
     background-color: var(--primary-accent-color);
     margin-bottom: 15px;
     margin-top: 35px;

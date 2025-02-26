@@ -1,0 +1,58 @@
+@media screen and (max-width: 1024px) {
+  .filters {
+    &__backdrop {
+      position: absolute;
+      top: -4%;
+      left: -8%;
+      width: 100vw;
+      height: 183%;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 254, 253, 0.8);
+      z-index: 1001;
+    }
+
+    &__form {
+      position: absolute;
+      top: 24%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 6px;
+      box-shadow: 0 4px 25px 0 rgba(153, 153, 153, 0.25);
+      background: var(--white-text-color);
+      z-index: 1002;
+      padding: 50px 60px;
+      padding-top: 0;
+      width: 200px;
+    }
+
+    &__btn-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    &__btn-cont {
+      width: 240px;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 25px;
+      margin-bottom: -24px;
+    }
+
+    &__cont{
+      position: absolute;
+      top: 12vh;
+      right: 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 25px;
+    }
+  }
+}
+
+.filter{
+  &__btn-open{
+    position: absolute;
+    top: 0;
+    right: 110%;
+  }
+}

@@ -145,4 +145,7 @@
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M52 28l-24-24-24 24"></path>
 </symbol>
 </defs>
+<symbol id="icon-filter" viewBox="0 0 26 32">
+<path d="M9.6 18.526l-9.6-15.158v-3.368h25.6v3.368l-9.6 15.158v10.105l-6.4 3.368v-13.474z"></path>
+</symbol>
 </svg>
