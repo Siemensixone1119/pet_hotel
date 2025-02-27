@@ -24,7 +24,7 @@ function initFilter() {
     filter: document.querySelector("[data-filter]"),
     backdrop: document.querySelector("[data-backdrop]"),
   };
-  prHidden(refs)
+  prHidden(refs);
   refs.openFilterBtn.addEventListener("click", () => toggleFilter(refs));
   refs.closeFilterBtn.addEventListener("click", (event) => {
     event.preventDefault();
