@@ -1,0 +1,45 @@
+@media screen and (max-width:768px){
+  .card{
+    &_cont{
+      padding: 0 15px !important;
+      display: block;
+    }
+
+    &__title{
+      display: inline-block;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+    }
+  
+    &__text:last-child {
+      margin-bottom: 17px;
+    }
+
+    &__equipment{
+      margin-bottom: 15px;
+    }
+
+    &__equipment:last-child {
+      margin-bottom: 25px;
+    }
+
+    &__btn{
+      margin-top: 30px;
+      max-width: 90%;
+      width: 100%;
+    }
+
+    &__btn-cont{
+      margin-left: auto;
+      margin-right: 5px;
+    } 
+
+    &__btn-text{
+      margin-left: auto;
+    }
+  }
+}

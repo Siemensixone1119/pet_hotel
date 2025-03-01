@@ -47,4 +47,6 @@
 
 
 // 
-@use "./component/room_card/room_card.scss";
+@use "./component/room_card/card.scss";
+@use "./component/room_card/card_tablet";
+@use "./component/room_card/card_mobile";
