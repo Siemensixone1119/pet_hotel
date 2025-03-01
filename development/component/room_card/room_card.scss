@@ -1,0 +1,96 @@
+@use "../../assets/style/mixins" as mixins;
+
+.card {
+  display: grid;
+  grid-template-columns: 90px 100%;
+  grid-template-rows: repeat(3, auto);
+  gap: 25px;
+  align-items: start;
+  min-height: 400px;
+
+  &_cont {
+    display: flex;
+    gap: 180px;
+    padding-top: 70px !important;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item.small {
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__item.large {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  &__title {
+    display: inline-block;
+    font-family: var(--Rubik);
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin-bottom: 25px;
+  }
+
+  &__text:last-child {
+    margin-bottom: 20px;
+  }
+
+  &__equipment {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 13px;
+  }
+
+  &__equipment:last-child {
+    margin-bottom: 30px;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__price {
+    font-size: 18px;
+    font-family: var(--Lato-500);
+    margin-left: 12px;
+  }
+
+  &__btn {
+    @include mixins.bron-btn;
+    background-color: var(--secondary-accent-color);
+    color: var(--white-text-color);
+    margin-top: 70px;
+  }
+
+  &__btn-cont {
+    @include mixins.bron-btn__contain;
+    background-color: var(--white-text-color);
+  }
+
+  &__btn-icon {
+    @include mixins.bron-room__btn-icon;
+    fill: var(--secondary-accent-color)
+  }
+}
