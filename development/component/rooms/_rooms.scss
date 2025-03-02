@@ -5,6 +5,14 @@
   margin-top: 70px;
 }
 
+.room__bcg{
+  position: absolute;
+  top: -15%;
+  left: -10%;
+  width: 500px;
+  z-index: -1;
+}
+
 .room__list::after {
   content: '';
   display: block;
