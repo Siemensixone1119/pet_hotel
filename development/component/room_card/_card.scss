@@ -9,9 +9,13 @@
   min-height: 400px;
 
   &_cont {
+    position: relative;
     display: flex;
     gap: 180px;
     padding-top: 70px !important;
+    padding-left: 8vw !important;
+    padding-right: 9vw !important;
+    overflow: hidden;
   }
 
   &__item {
@@ -97,5 +101,14 @@
   &__btn-icon {
     @include mixins.bron-room__btn-icon;
     fill: var(--secondary-accent-color)
+  }
+
+  &__bcg{
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    transform: rotate(225deg);
+    width: 306px;
+    height: 256px;
   }
 }
