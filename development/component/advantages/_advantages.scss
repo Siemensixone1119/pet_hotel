@@ -5,6 +5,15 @@
   margin-top: 70px;
 }
 
+.advantages-cont{
+  position: relative;
+    margin: 0;
+    padding-top: 140px;
+    padding-right: 8vw;
+    padding-left: 8vw;
+    overflow: hidden;
+}
+
 .advantages {
   padding: 30px;
   background: var(--primary-color);
@@ -39,5 +48,14 @@
     line-height: 140%;
     max-width: 295px;
     font-size: 16px;
+  }
+
+  &__bcg{
+    position: absolute;
+    top: 3%;
+    right: -2%;
+    width: 347px;
+    height: 309px;
+    z-index: -1;
   }
 }

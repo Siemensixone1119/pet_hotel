@@ -1,6 +1,7 @@
 @use "../../assets/style/mixins" as mixins;
 
 .contain-rev {
+  position: relative;
   width: 100%;
   overflow: hidden;
   margin-top: 140px;
@@ -24,6 +25,8 @@
     min-width: 442px;
     min-height: 200px;
     margin-right: 30px;
+    position: relative;
+    z-index: 99;
   }
   
   &__contain1 {
@@ -87,5 +90,12 @@
   
   &__arrow-icon {
     @include mixins.arrow-icon
+  }
+
+  &__bcg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
   }
 }

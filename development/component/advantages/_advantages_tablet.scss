@@ -3,23 +3,28 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .advantages{
+  .advantages {
     &__icon-contain {
       width: 75px;
       height: 75px;
     }
-  
+
     &__icon {
       width: 45px;
       height: 45px;
     }
-  
-    &__el-title{
+
+    &__el-title {
       font-size: 20px;
     }
-  
-    &__el-text{
+
+    &__el-text {
       font-size: 15px;
+    }
+
+    &__bcg {
+      top: 1%;
+      right: -5%;
     }
   }
 }
