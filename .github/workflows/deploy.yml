@@ -37,6 +37,16 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: npm run prod
 
+      - name: Create Dockerfile
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo 'FROM node:18-alpine' > Dockerfile
+          echo 'WORKDIR /app' >> Dockerfile
+          echo 'COPY . . ' >> Dockerfile
+          echo 'RUN npm install' >> Dockerfile
+          echo 'RUN npm run build:prod' >> Dockerfile
+          echo 'CMD ["npm", "start"]' >> Dockerfile
+
       - name: Build and Push Docker Image
         if: github.ref == 'refs/heads/main'
         run: |
