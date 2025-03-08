@@ -44,7 +44,7 @@ jobs:
           echo 'WORKDIR /app' >> Dockerfile
           echo 'COPY . . ' >> Dockerfile
           echo 'RUN npm install' >> Dockerfile
-          echo 'RUN npm run build:prod' >> Dockerfile
+          echo 'RUN npm run prod' >> Dockerfile
           echo 'CMD ["npm", "start"]' >> Dockerfile
 
       - name: Build and Push Docker Image
