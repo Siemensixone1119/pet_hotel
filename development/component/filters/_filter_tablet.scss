@@ -1,14 +1,9 @@
+@use "../../assets/style/mixins" as mixins;
+
 @media screen and (max-width: 1024px) {
   .filters {
     &__backdrop {
-      position: absolute;
-      top: -4%;
-      left: -8%;
-      width: 100vw;
-      height: 183%;
-      backdrop-filter: blur(8px);
-      background: rgba(255, 254, 253, 0.8);
-      z-index: 1001;
+      @include mixins.backdrop
     }
 
     &__form {

@@ -35,7 +35,7 @@
 
 // контейнер кнопок слайдера
 
-@mixin slide{
+@mixin slide {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -97,4 +97,15 @@
 @mixin circ-icon {
   width: 12px;
   height: 12px;
+}
+
+@mixin backdrop {
+  position: absolute;
+  top: -4%;
+  left: -8%;
+  width: 100vw;
+  height: 183%;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 254, 253, 0.8);
+  z-index: 1001;
 }

@@ -111,4 +111,8 @@
     width: 306px;
     height: 256px;
   }
+
+  &__backdrop{
+    @include mixins.backdrop;
+  }
 }

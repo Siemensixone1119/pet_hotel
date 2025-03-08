@@ -10,4 +10,5 @@ import "../component/filters/filters.js";
 import "../component/products/products.js";
 import "../component/advertising/advertising.js";
 
-import "../component/room_card/card.js"
+import "../component/room_card/card.js";
+import "../component/modal_window/modal_window.js";
