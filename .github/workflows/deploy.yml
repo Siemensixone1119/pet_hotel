@@ -1,0 +1,46 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js and Dependencies
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Development Version
+        if: github.ref == 'refs/heads/dev'
+        run: npm run build:dev
+
+      - name: Upload Dev Build as Artifact
+        if: github.ref == 'refs/heads/dev'
+        uses: actions/upload-artifact@v3
+        with:
+          name: dev-build
+          path: dist/
+
+      - name: Build Production Version
+        if: github.ref == 'refs/heads/main'
+        run: npm run build:prod
+
+      - name: Build and Push Docker Image
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+          docker build -t my-app .
+          docker tag my-app my-dockerhub-user/my-app:latest
+          docker push my-dockerhub-user/my-app:latest
