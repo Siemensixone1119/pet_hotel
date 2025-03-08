@@ -37,15 +37,13 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: npm run prod
 
-      - name: Create Dockerfile
+      - name: Create Dockerfile for Nginx
         if: github.ref == 'refs/heads/main'
         run: |
-          echo 'FROM node:18-alpine' > Dockerfile
-          echo 'WORKDIR /app' >> Dockerfile
-          echo 'COPY . . ' >> Dockerfile
-          echo 'RUN npm install' >> Dockerfile
-          echo 'RUN npm run prod' >> Dockerfile
-          echo 'CMD ["npm", "start"]' >> Dockerfile
+          echo 'FROM nginx:latest' > Dockerfile
+          echo 'COPY . /usr/share/nginx/html' >> Dockerfile
+          echo 'EXPOSE 80' >> Dockerfile
+          echo 'CMD ["nginx", "-g", "daemon off;"]' >> Dockerfile
 
       - name: Build and Push Docker Image
         if: github.ref == 'refs/heads/main'
