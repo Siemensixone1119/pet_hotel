@@ -41,7 +41,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           echo 'FROM nginx:latest' > Dockerfile
-          echo 'COPY . /usr/share/nginx/html' >> Dockerfile
+          echo 'COPY production /usr/share/nginx/html' >> Dockerfile
           echo 'EXPOSE 80' >> Dockerfile
           echo 'CMD ["nginx", "-g", "daemon off;"]' >> Dockerfile
 
