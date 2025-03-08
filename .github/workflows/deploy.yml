@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Development Version
         if: github.ref == 'refs/heads/dev'
-        run: npm run build:dev
+        run: npm run dev
 
       - name: Upload Dev Build as Artifact
         if: github.ref == 'refs/heads/dev'
@@ -35,7 +35,7 @@ jobs:
 
       - name: Build Production Version
         if: github.ref == 'refs/heads/main'
-        run: npm run build:prod
+        run: npm run prod
 
       - name: Build and Push Docker Image
         if: github.ref == 'refs/heads/main'
