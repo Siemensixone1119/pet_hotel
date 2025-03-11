@@ -1,9 +1,9 @@
-<div class="modal__backdrop"></div>
+<div class="modal__backdrop" data-backdrop></div>
 
 <div class="modal">
   <div class="modal__close-cont">
     <button class="modal__close-btn">
-      <svg class="modal__close-icon">
+      <svg class="modal__close-icon" data-close-registration>
         <use href="../../assets/image/symbol-defs.svg#icon-close"></use>
       </svg>
     </button>
@@ -16,13 +16,15 @@
       <input type="text" class="modal__input" placeholder="Телефон">
       <input type="text" class="modal__input" placeholder="E-mail">
       <div class="modal__inputs2">
-        <label for="">Дата заезда c</label>
-        <input type="text" class="modal__input modal__input2" placeholder="26.01.2025">
-        <label for="">по</label>
-        <input type="text" class="modal__input modal__input2" placeholder="26.02.2025">
+        <label class="modal__first">Дата заезда</label>
+        <d class="modal__input2-cont">
+          <label for="">c</label>
+          <input type="text" class="modal__input modal__input2" placeholder="26.01.2025">
+          <label for="">по</label>
+          <input type="text" class="modal__input modal__input2" placeholder="26.02.2025">
       </div>
     </div>
-    <a href="" class="modal__btn"><span class="modal__btn-text">Забронировать</span>
+    <a href="" class="modal__btn"><span class="modal__btn-text">Отправить заявку</span>
       <div class="modal__btn-cont">
         <svg class="modal__btn-icon">
           <use href="../../assets/image/symbol-defs.svg#icon-paw"></use>
@@ -30,7 +32,7 @@
       </div>
     </a>
   </form>
-  <svg class="modal__bcg">
-    <use href="../../assets/image/symbol-defs.svg#icon-bcg_paw"></use>
-  </svg>
 </div>
+<svg class="modal__bcg">
+  <use href="../../assets/image/symbol-defs.svg#icon-bcg_paw"></use>
+</svg>

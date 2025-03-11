@@ -51,4 +51,6 @@
 @use "./component/room_card/card_tablet";
 @use "./component/room_card/card_mobile";
 
-@use "./component/modal_window/modal_window.scss"
+@use "./component/modal_window/modal_window.scss";
+@use "./component/modal_window/modal_window_tablet.scss";
+@use "./component/modal_window/modal_window_mobile.scss";

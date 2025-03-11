@@ -79,7 +79,7 @@ module.exports = {
   //   overrideConfigFile: path.resolve(__dirname, "eslint.config.mjs")}) // Автоматическое исправление ошибок)
   ],
   devServer: {
-    port: 8080, // Порт для локального сервера
+    port: 8081, // Порт для локального сервера
     open: true, // Автоматическое открытие браузера
     static: {
       directory: path.resolve(__dirname, "production"), // Обслуживание файлов из папки "production"
