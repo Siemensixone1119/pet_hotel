@@ -15,9 +15,7 @@
     &__contain {
       display: flex;
       flex-wrap: nowrap;
-      padding: 0px 15px;
-      gap: 15px;  // Добавляет отступы между элементами
-    }
+      padding: 0px 15px;    }
   
     &__el {
       min-width: calc(100vw - 30px); // 100vw минус padding

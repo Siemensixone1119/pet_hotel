@@ -99,3 +99,18 @@
     z-index: -1;
   }
 }
+
+/* Плавное переключение слайдов */
+.reviews__contain {
+  transition: transform 0.5s ease;
+}
+
+/* Плавное изменение индикаторов */
+.reviews__circ-icon {
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+/* Эффект масштабирования для активного индикатора */
+.reviews__circ-el.active svg {
+  transform: scale(1.2);
+}

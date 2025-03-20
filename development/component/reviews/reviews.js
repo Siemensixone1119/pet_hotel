@@ -3,99 +3,142 @@ import reviewsHTML from "../reviews/reviews.html";
 document.addEventListener("DOMContentLoaded", function () {
   const reviewsElement = document.getElementById("reviews");
   if (!reviewsElement) return;
-
+  
   // Вставляем HTML с отзывами
   reviewsElement.innerHTML = reviewsHTML;
-
-  // Находим список отзывов
-  const slider = reviewsElement.querySelector(".reviews__contain");
-
-  // Находим кнопки-стрелки
-  const arrowButtons = reviewsElement.querySelectorAll(".reviews__arrow-contain .reviews__arrow button");
-  if (arrowButtons.length < 2) {
-    console.warn("Не найдены кнопки переключения слайдера");
-    return;
-  }
-  const [arrowLeft, arrowRight] = arrowButtons;
-
-  // Находим три индикатора (точки)
+  
+  // Получаем контейнер отзывов
+  const reviewsList = reviewsElement.querySelector(".reviews__contain");
+  if (!reviewsList) return;
+  
+  // Сохраняем оригинальные отзывы и их число
+  const originalReviews = Array.from(reviewsList.children);
+  const originalCount = originalReviews.length;
+  
+  // Клонируем оригинальные отзывы для автоскролла (бесшовное зацикливание через CSS-анимацию)
+  originalReviews.forEach(item => {
+    const clonedItem = item.cloneNode(true);
+    clonedItem.setAttribute("aria-hidden", "true");
+    reviewsList.appendChild(clonedItem);
+  });
+  
+  // Включаем автоскролл через CSS-анимацию (если используется)
+  reviewsList.setAttribute("data-animated", "true");
+  
+  // Основной слайдер – работаем с контейнером отзывов
+  const slider = reviewsList;
+  // Все слайды (оригинальные + клоны), но для переключения и индикаторов используем только оригинальные
+  const slides = slider.querySelectorAll(".reviews__el");
+  // totalSlides включает клоны, поэтому для логики переключения будем использовать originalCount
+  
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
   const indicators = reviewsElement.querySelectorAll(".reviews__circ-el");
-  if (indicators.length < 3) {
-    console.warn("Ожидалось 3 индикатора, найдено:", indicators.length);
-  }
-  const [indicator1, indicator2, indicator3] = indicators;
-
-  // Считаем, сколько всего «страниц» (слайдов) у нас получается
-  // Допустим, показываем по 3 отзыва на каждой странице
-  const itemsPerSlide = 3;
-  const totalItems = slider.querySelectorAll("li").length; // кол-во отзывов (li)
-  const totalSlides = Math.ceil(totalItems / itemsPerSlide);
-
-  // Текущий индекс слайда (0 означает первые отзывы)
-  let currentSlide = 0;
-
-  // Функция, которая сдвигает слайдер и меняет индикаторы
-  function updateSlider() {
-    // 1) СДВИГАЕМ СЛАЙДЕР ПО X:
-    // ----------------------------------
-    // Нужно взять ширину контейнера, в котором мы скрываем «лишние» отзывы.
-    // Если у вас overflow: hidden на .contain-rev (или другом элементе),
-    // используйте именно его ширину, например:
-    // const viewportWidth = slider.closest(".contain-rev").offsetWidth;
-    // Если же родительский .parentElement — это и есть нужный контейнер, оставьте так:
-    const viewportWidth = slider.parentElement.offsetWidth;
-
-    // Сдвигаем (translateX) на currentSlide * ширину
-    slider.style.transform = `translateX(-${currentSlide * viewportWidth}px)`;
-    slider.style.transition = "transform 0.5s ease";
-
-    // 2) СБРАСЫВАЕМ ВСЕ ИНДИКАТОРЫ В СЕРЫЙ
-    // ----------------------------------
-    indicators.forEach((ind) => {
+  
+  // Текущий индекс (0 ... originalCount - 1)
+  let currentIndex = 0;
+  
+  // Функция обновления слайдера и индикаторов
+  function updateSlider(transition = true) {
+    const singleSlide = slides[0];
+    const style = window.getComputedStyle(singleSlide);
+    const marginRight = parseFloat(style.marginRight) || 0;
+    const slideWidth = singleSlide.offsetWidth + marginRight;
+    
+    slider.style.transition = transition ? "transform 0.5s ease" : "none";
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    
+    // Определяем активный индикатор:
+    // Если currentIndex === 0 → активен первый;
+    // Если currentIndex === originalCount - 1 → активен последний;
+    // Иначе – активен центральный (то есть, индикатор с индексом Math.floor(indicators.length/2)).
+    let activeIndicatorIndex;
+    if (currentIndex === 0) {
+      activeIndicatorIndex = 0;
+    } else if (currentIndex === originalCount - 1) {
+      activeIndicatorIndex = indicators.length - 1;
+    } else {
+      activeIndicatorIndex = Math.floor(indicators.length / 2);
+    }
+    
+    indicators.forEach((ind, idx) => {
       const useEl = ind.querySelector("use");
       if (useEl) {
-        useEl.setAttribute("href", "../../assets/image/symbol-defs.svg#icon-gray_point");
+        if (idx === activeIndicatorIndex) {
+          useEl.setAttribute("href", "../../assets/image/symbol-defs.svg#icon-orange_point");
+          ind.classList.add("active");
+        } else {
+          useEl.setAttribute("href", "../../assets/image/symbol-defs.svg#icon-gray_point");
+          ind.classList.remove("active");
+        }
       }
     });
-
-    // 3) ЛОГИКА ПОДСВЕТКИ ИНДИКАТОРОВ
-    // ----------------------------------
-    // - Если currentSlide === 0 => оранжевый первый
-    // - Если 0 < currentSlide < totalSlides - 1 => оранжевый второй
-    // - Если currentSlide === totalSlides - 1 => оранжевый третий
-    if (currentSlide === 0) {
-      const useEl = indicators[0].querySelector("use");
-      if (useEl) {
-        useEl.setAttribute("href", "../../assets/image/symbol-defs.svg#icon-orange_point");
-      }
-    } else if (currentSlide < totalSlides - 1) {
-      const useEl = indicators[1].querySelector("use");
-      if (useEl) {
-        useEl.setAttribute("href", "../../assets/image/symbol-defs.svg#icon-orange_point");
-      }
-    } else {
-      const useEl = indicators[2].querySelector("use");
-      if (useEl) {
-        useEl.setAttribute("href", "../../assets/image/symbol-defs.svg#icon-orange_point");
-      }
-    }
   }
-
-  // Обработчики нажатия на стрелки
-  arrowLeft.addEventListener("click", function () {
-    if (currentSlide > 0) {
-      currentSlide--;
-      updateSlider();
+  
+  // Обработчики кнопок – циклический режим по оригинальным отзывам
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = originalCount - 1;
     }
+    updateSlider();
   });
-
-  arrowRight.addEventListener("click", function () {
-    if (currentSlide < totalSlides - 1) {
-      currentSlide++;
-      updateSlider();
+  
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < originalCount - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
     }
+    updateSlider();
   });
-
-  // При загрузке вызываем updateSlider
+  
+  // Реализация свободного перелистывания (drag/swipe) для мобильных и планшетов (при ширине < 992px)
+  let isFreeScroll = window.innerWidth < 992;
+  let startX = 0;
+  let initialOffset = 0;
+  let currentOffset = 0;
+  let slideWidth = 0;
+  
+  function computeSlideWidth() {
+    const singleSlide = slides[0];
+    const style = window.getComputedStyle(singleSlide);
+    const marginRight = parseFloat(style.marginRight) || 0;
+    return singleSlide.offsetWidth + marginRight;
+  }
+  
+  if (isFreeScroll) {
+    slider.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+      slideWidth = computeSlideWidth();
+      initialOffset = currentIndex * slideWidth;
+      slider.style.transition = "none";
+    }, { passive: true });
+    
+    slider.addEventListener("touchmove", (e) => {
+      const currentX = e.touches[0].clientX;
+      const delta = startX - currentX;
+      currentOffset = initialOffset + delta;
+      // Ограничиваем диапазон свободного перелистывания от 0 до (originalCount - 1) * slideWidth
+      if (currentOffset < 0) currentOffset = 0;
+      if (currentOffset > (originalCount - 1) * slideWidth) {
+        currentOffset = (originalCount - 1) * slideWidth;
+      }
+      slider.style.transform = `translateX(-${currentOffset}px)`;
+    }, { passive: true });
+    
+    slider.addEventListener("touchend", () => {
+      currentIndex = Math.round(currentOffset / slideWidth);
+      updateSlider(false);
+    }, { passive: true });
+  }
+  
+  window.addEventListener("resize", () => {
+    isFreeScroll = window.innerWidth < 1024;
+    updateSlider(false);
+  });
+  
+  // Инициализация
   updateSlider();
 });
