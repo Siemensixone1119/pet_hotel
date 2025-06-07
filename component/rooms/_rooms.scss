@@ -5,6 +5,14 @@
   margin-top: 70px;
 }
 
+.room__bcg{
+  position: absolute;
+  top: -15%;
+  left: -10%;
+  width: 500px;
+  z-index: -1;
+}
+
 .room__list::after {
   content: '';
   display: block;
@@ -20,11 +28,12 @@
 .room__img {
   z-index: 1;
   max-width: 60%;
-  height: auto;
+  height: 100%;
   margin-left: 70px;
+  border-radius: 10px;
 }
 
-.room_card-description {
+.room__card-description {
   position: absolute;
   top: 13%;
   right: 7%;
@@ -35,11 +44,11 @@
   box-shadow: 0 0 25px 0 rgba(208, 208, 208, 0.25);
 }
 
-.rooms_space{
+.rooms__space{
   display: none;
 }
 
-.room-description {
+.room__description {
   display: inline-block;
   padding: 40px 100px;
 }
@@ -62,11 +71,11 @@
   fill: var(--secondary-accent-color)
 }
 
-.room_card-list {
+.room__card-list {
   margin-top: 30px;
 }
 
-.room_card-el::marker {
+.room__card-el::marker {
   content: '●';
   color: var(--primary-accent-color);
   font-size: 22px;

@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .logo {
     width: 46px;
     height: 38px;
@@ -6,31 +6,34 @@
     margin-left: 15px;
   }
 
-  .footer{
+  .footer {
     display: inline-block;
-  }
-  
-  .footer__nav{
-    margin-left: 15px;
-    flex-wrap: wrap;
-    margin-top: 25px;
+
+    &__nav {
+      margin-left: 15px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+
+    &__nav-el {
+      margin-bottom: 20px;
+    }
+
+    &__policy-contain {
+      display: inline-block;
+    }
+
+    &__policy {
+      display: inline-block;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
   }
 
-  .footer__nav-el{
-    margin-bottom: 20px;
-  }
-
-  .line{
+  .line {
     margin-top: 10px;
   }
 
-  .footer_policy-contain{
-    display: inline-block;
-  }
-
-  .footer_policy{
-    display: inline-block;
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
 }

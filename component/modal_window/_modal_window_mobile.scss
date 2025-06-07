@@ -1,0 +1,47 @@
+@media screen and (max-width: 768px) {
+  .modal{
+    width: 290px;
+
+    &__input{
+      width: 260px;
+    }
+
+    &__inputs2{
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-left: -15px;
+    }
+
+    &__item{
+      flex-basis: 100%;
+    }
+
+    &__input2{
+      width: 107px;
+      padding: 20px 15px;
+    }
+
+    &__first{
+      margin-right: 100px;
+    }
+
+    &__input2-cont{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    &__btn{
+      width: 260px;
+      margin-top: 35px;
+    }
+
+    &__btn-cont{
+      margin-left: 45px;
+    }
+
+    &__btn-text{
+      margin-left: 40px;
+    }
+  }
+}

@@ -1,22 +1,26 @@
 @media screen and (max-width: 1024px) {
-  .reviews__el {
+
+.reviews{
+    &__el {
     max-width: 442px;
   }
 
-  .reviews__text{
+  &__text{
     font-size: 15px;
   }
 
-  .reviews__slide{
+  &__slide{
     justify-content: center;
   }
 
-  .reviews__circ{
+  &__circ{
     margin: 0;
   }
 
-  .reviews__arrow-contain,
+  &__arrow-contain,
   .el{
     display: none;
   }
+}
+
 }

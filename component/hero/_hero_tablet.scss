@@ -1,24 +1,28 @@
-@media screen and (max-width: 1024px){
-  .hero-bcg{
-    background-image: url(./assets/image/hero_tablet.jpg);
-    height: 800px;
-    background-size: cover;
-    max-width: 100%;
-  }
+@media screen and (max-width: 1024px) {
+  
 
-  .hero__contain{
-    display: block;
-    width: 50vw;
-    margin: 0 auto;
-  }
+  .hero {
+    &__bcg {
+      background-image: url(./assets/image/hero_tablet.jpg);
+      height: 768px;
+      background-size: cover;
+      max-width: 100%;
+    }
 
-  .hero__str1,
-  .hero__str2,
-  .hero__str3{
-    text-align: center;
-  }
+    &__contain {
+      display: block;
+      width: 50vw;
+      margin: 0 auto;
+    }
 
-  .hero__btn{
-    margin: 40px auto;
+    &__str1,
+    &__str2,
+    &__str3 {
+      text-align: center;
+    }
+
+    &__btn {
+      margin: 40px auto;
+    }
   }
 }

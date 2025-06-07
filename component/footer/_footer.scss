@@ -3,6 +3,28 @@
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+
+  &__nav {
+    display: flex;
+  }
+
+  &__nav-el {
+    margin-right: 30px;
+  }
+
+  &__nav-el:last-child {
+    margin-right: 0px;
+  }
+
+  &__policy-contain {
+    display: flex;
+    color: var(--thirdth-text-color);
+  }
+  
+  &__policy {
+    margin-left: auto;
+    color: var(--thirdth-text-color);
+  }
 }
 
 .logo {
@@ -10,33 +32,11 @@
   height: 52px;
 }
 
-.footer__nav {
-  display: flex;
-}
-
 nav {
   margin-left: auto;
 }
 
-.footer__nav-el {
-  margin-right: 30px;
-}
-
-.footer__nav-el:last-child {
-  margin-right: 0px;
-}
-
-.line{
-  width: 100%;
+.line {
+  width: auto;
   border: 1px solid #efefef;
-}
-
-.footer_policy-contain{
-  display: flex;
-  color: var(--thirdth-text-color);
-}
-
-.footer_policy{
-  margin-left: auto;
-  color: var(--thirdth-text-color);
 }
